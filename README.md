@@ -4,6 +4,8 @@
 
 演示demo地址：[3D旋转轮播图演示](https://jeffrey-0.github.io/3D-slider/3D旋转轮播.html)
 
+项目地址：[3D旋转轮播图](https://github.com/Jeffrey-0/3D-slider)
+
 ## 效果图&功能
 
 ![img](img/3D轮播效果图.gif)
@@ -17,20 +19,19 @@
 
 ## 快速开始
 
-下载地址：` https://github.com/Jeffrey-0/3D-slider`
-
 CSS样式
 
 ```html
-<link rel="stylesheet" type="text/css" href="your_path/3D-slider.css">
+<link rel="stylesheet" type="text/css" href="https://jeffrey-0.github.io/3D-slider/3D-slider.css">
 ```
 
 HTML结构
 
 ```html
 <div id="wrapper" class="wrapper">
-    <a href="#"><img src="your_path/img/1.jpg" alt="火影"></a>
-    <a href="#"><img src="your_path/img/2.jpg" alt="海贼王"></a>
+    <a href="#"><img src="https://jeffrey-0.github.io/3D-slider/img/1.jpg" alt="火影"></a>
+    <a href="#"><img src="https://jeffrey-0.github.io/3D-slider/img/2.jpg" alt="海贼王"></a>
+    <a href="#"><img src="https://jeffrey-0.github.io/3D-slider/img/3.jpg" alt="全职高手"></a>
 </div>
 ```
 
@@ -38,23 +39,36 @@ JS脚本
 
 ```html
 <!-- 引入jquery -->
-<script type="text/javascript" src="your_path/jquery.min.js"></script>
+<script type="text/javascript" src="https://jeffrey-0.github.io/3D-slider/jquery.min.js"></script>
 <!-- 引入slider插件 -->
-<script type="text/javascript" src="your_path/3D-slider.js"></script>
+<script type="text/javascript" src="https://jeffrey-0.github.io/3D-slider/3D-slider.js"></script>
 <!-- 使用slider插件 -->
-<script>      
+<script>
+      if (screen.width > 767 ) {
+        // 适配pc端
         $('#wrapper').slider({
           curDisplay: 0, // 当前显示第n张图片
           autoPlay: true, // 是否自动轮播
           interval: 2000, // 轮播的时间，单位：毫秒
           translateX: 200, // 图片向俩边平移的距离，单位：px
-          translateZ: 300, // 图片向前平移的距离，视觉上的放大缩小，单位：px
+          translateZ: 300, // 图片向前平移的距离，单位：px
           rotateY: 30  // 图片的偏移角度，单位：deg
         })
-</script>
+      } else {
+        // 适配手机端
+        $('#wrapper').slider({
+          curDisplay: 0,
+          autoPlay: true,
+          interval: 2000,
+          translateX: 50,
+          translateZ: 100,
+          rotateY: 30
+        })
+      }
+  </script>
 ```
 
-
+> 第二种：建议下载本项目[3D旋转轮播图](https://github.com/Jeffrey-0/3D-slider)到本地，再引入，节省时间
 
 ## 选项
 
@@ -69,7 +83,7 @@ JS脚本
 | translateZ | Number  | 300  | 图片向前平移的距离，单位：px   |
 | rotateY    | Number  | 30   | 图片的偏移角度，单位：deg      |
 
-* 如果你不想要点击当前图片跳转链接，可以设置a标签中的`href`为`javascript:;`
+> 如果你不想要点击当前图片跳转链接，可以设置a标签中的`href`为`javascript:;`
 
 ## 兼容性
 
