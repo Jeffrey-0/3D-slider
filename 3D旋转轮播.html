@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>jQuery3D旋转轮播图</title>
+  <link rel="stylesheet" type="text/css" href="./3D-slider.css">
+</head>
+<body>
+  <div id="wrapper" class="wrapper">
+    <a href="img/1.jpg"><img src="img/1.jpg" alt="火影"></a>
+    <a href="img/2.jpg"><img src="img/2.jpg" alt="海贼王"></a>
+    <a href="img/3.jpg"><img src="img/3.jpg" alt="全职高手"></a>
+    <a href="img/4.jpg"><img src="img/4.jpg" alt="妖尾"></a>
+    <a href="img/5.jpg"><img src="img/5.jpg" alt="东京喰种"></a>
+  </div>
+  <script type="text/javascript" src="./jquery.min.js"></script>
+  <!-- 封装插件 -->
+  <script type="text/javascript" src="./3D-slider.js"></script>
+  <!-- 调用插件 -->
+  <script>
+      if (screen.width > 767 ) {
+        // 适配pc端
+        $('#wrapper').slider({
+          curDisplay: 0, // 当前显示第n张图片
+          autoPlay: true, // 是否自动轮播
+          interval: 2000, // 轮播的时间，单位：毫秒
+          translateX: 200, // 图片向俩边平移的距离，单位：px
+          translateZ: 300, // 图片向前平移的距离，视觉上的放大缩小，单位：px
+          rotateY: 30  // 图片的偏移角度，单位：deg
+        })
+      } else {
+        // 适配手机端
+        $('#wrapper').slider({
+          curDisplay: 0, // 当前显示第n张图片
+          autoPlay: true, // 是否自动轮播
+          interval: 2000, // 轮播的时间，单位：毫秒
+          translateX: 50, // 图片向俩边平移的距离，单位：px
+          translateZ: 100, // 图片向前平移的距离，视觉上的放大缩小，单位：px
+          rotateY: 30  // 图片的偏移角度，单位：deg
+        })
+      }
+  </script>
+</body>
+</html>
