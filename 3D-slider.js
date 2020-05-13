@@ -46,15 +46,18 @@
         lNum += this.imgLen
       }
       self.$img.eq(lNum).css({
-        transform: 'translateX(' + (-this.translateX * (i + 1)) + 'px) translateZ(' + (this.translateZ / 2 - i * 100) + 'px) rotateY(' + this.rotateY + 'deg)'
+        transform: 'translateX(' + (-this.translateX * (i + 1)) + 'px) translateZ(' + (this.translateZ / 2 - i * 100) + 'px) rotateY(' + this.rotateY + 'deg)',
+        zIndex: hLen - i - 1
       })
       rNum = (self.curDisplay + i + 1) % this.imgLen
       self.$img.eq(rNum).css({
-        transform: 'translateX(' + (this.translateX * (i + 1)) + 'px) translateZ(' + (this.translateZ / 2 - i * 100) + 'px) rotateY(-' + this.rotateY + 'deg)'
+        transform: 'translateX(' + (this.translateX * (i + 1)) + 'px) translateZ(' + (this.translateZ / 2 - i * 100) + 'px) rotateY(-' + this.rotateY + 'deg)',
+        zIndex: hLen - i - 1
       })
     }
     self.$img.eq(self.curDisplay).css({
-      transform: 'translateZ(' + this.translateZ + 'px)'
+      transform: 'translateZ(' + this.translateZ + 'px)',
+      zIndex: hLen
     })
   }
   // 绑定点击事件 + 自动轮播事件
